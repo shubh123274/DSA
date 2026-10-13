@@ -9,12 +9,12 @@ class Solution {
             return matrix[i][j];
         if (dp[i][j] != 1000000000)
             return dp[i][j];
-        int down = fun(i + 1, j, matrix);
-        int left = fun(i + 1, j - 1, matrix);
-        int right = fun(i + 1, j + 1, matrix);
+        int x = fun(i + 1, j, matrix);
+        int y = fun(i + 1, j - 1, matrix);
+        int z = fun(i + 1, j + 1, matrix);
 
         return dp[i][j] = matrix[i][j]
-                + Math.min(down, Math.min(left, right));
+                + Math.min(x, Math.min(y, z));
     }
     public int minFallingPathSum(int[][] matrix) {
         for (int i = 0; i < 101; i++)
